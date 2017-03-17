@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="$('input.test1').before('<i>Before</i>');">Before</a>
+    <a href="javascript:void(0);" onclick="$('input.test1').after('<b>After</b>');">After</a>
+
+    <br/><br />
+
+    <input type="text" class="test1" value="Input 1" name="txtInput1" /><br />
+    <input type="text" class="test1" value="Input 2" name="txtInput2" /><br />
+
+    <br/><br />
+
+    <a href="javascript:void(0);" onclick="InsertElements();">Insert elements</a>
+    <br /><br />
+    <span id="spnTest2">Hello world? </span>
+
+    <script type="text/javascript">
+                                           function InsertElements() {
+                                               var element1 = $("<b></b>").text("Hello ");
+                                               var element2 = "<i>there </i>";
+                                               var element3 = document.createElement("u");
+                                               element3.innerHTML = "jQuery!";
+
+                                               $("#spnTest2").after(element1, element2, element3);
+                                           }
+    </script>
+
+    <br/><br />
+
+    <a href="javascript:void(0);" onclick="InsertElementsBefore();">Insert elements</a>
+    <br /><br />
+    <span id="spnTest3">Hello world? </span>
+
+    <script type="text/javascript">
+                                           function InsertElementsBefore() {
+                                               $("#spnTest3").before($("<i></i>").text("before() "));
+                                               $("<b></b>").text("insertBefore() ").insertBefore("#spnTest3");
+                                           }
+
+    </script>
+</body>
+
+</html>

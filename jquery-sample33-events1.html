@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="alert('Hello, world!');">Test</a>
+    <script type="text/javascript">
+        $(function () {
+            $("a, span").bind("click", function () {
+                alert('Hello, world!');
+            });
+        });
+    </script>
+
+    <br/><br/>
+
+    <a href="javascript:void(0);">Test 1</a>
+    <a href="javascript:void(0);">Test 2</a>
+    <script type="text/javascript">
+        $(function () {
+            $("a").bind("click", function () {
+                alert($(this).text());
+            });
+        });
+    </script>
+
+    <br/><br/>
+
+    <div id="divArea" style="background-color: silver; width: 100px; height: 100px;">
+    </div>
+    <script type="text/javascript">
+        $("#divArea").bind("mousemove", function (event) {
+            $(this).text(event.pageX + "," + event.pageY);
+        });
+    </script>
+
+    <br/><br/>
+
+    <a href="javascript:void(0);">Test 1</a>
+    <a href="javascript:void(0);">Test 2</a>
+    <script type="text/javascript">
+        var msg = "Hello, world!";
+        $(function () {
+            $("a").bind("click", { message: msg }, function (event) {
+                msg = "Changed msg";
+                alert(event.data.message);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
