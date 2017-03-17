@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:void(0);">Test 1</a>
+    <a href="javascript:void(0);">Test 2</a>
+    <script type="text/javascript">
+        var msg = "Hello, world!";
+        $(function () {
+            var handler1 = function () {
+                alert("First event handler!");
+            }
+
+            var handler2 = function () {
+                alert("Second event handler!");
+                $("a").unbind("click", handler2);
+            }
+
+            $("a").bind("click", handler1);
+            $("a").bind("click", handler2);
+        });
+    </script>
+</body>
+
+</html>
