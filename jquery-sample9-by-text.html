@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.google.com" target="_blank">Link 1</a><br />
+    <a href="http://www.google.com" target="_self">Link 2</a><br />
+    <a href="http://www.google.com" target="_blank">Link 3</a><br />
+    <input name="txt1"/>txt1<br/>
+    <input name="Atxt"/>Atxt<br/>
+    <input name="Myletter1"/>Myletter1<br/>
+    <script type="text/javascript">
+        $(function () {
+            $("a[target='_blank']").append(" [new window]");
+            $("a[target!='_blank']").append(" [same window]");
+            $("input[name^='txt']").css("color", "blue");
+            $("input[name$='txt']").css("color", "green");
+            $("input[name*='letter']").css("color", "red");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <style>
+        .bold {
+            font-weight: bold;
+        }
+        
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="ToggleClass(this);">Toggle class 1</a><br/>
+
+    <script type="text/javascript">
+        function ToggleClass(sender) {
+
+            if ($(sender).hasClass("bold"))
+                $(sender).removeClass("bold");
+            else
+                $(sender).addClass("bold");
+        }
+    </script>
+
+    <a href="javascript:void(0);" onclick="$(this).toggleClass('bold');">Toggle class 2</a><br/>
+
+    <div id="divTestArea1">
+        <span>Test 1</span><br/>
+        <div>Test 2</div>
+        <b>Test 3</b><br/>
+    </div>
+
+    <script type="text/javascript">
+                                           $(function () {
+                                               $("#divTestArea1 span, #divTestArea1 b").addClass("blue");
+                                               $("#divTestArea1 div").addClass("bold blue");
+                                           });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="divTestArea1">
+        <b>Bold text</b>
+        <i>Italic text</i>
+        <div id="divTestArea2">
+            <b>Bold text 2</b>
+            <i>Italic text 2</i>
+            <div>
+                <b>Bold text 3</b>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#divTestArea1 b").css("color", "red");
+        $("#divTestArea1 > b").css("color", "blue");
+    </script>
+</body>
+
+</html>

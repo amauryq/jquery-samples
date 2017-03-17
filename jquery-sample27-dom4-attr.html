@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="http://www.google.com" id="aGoogle1">Google Link</a></br><br/>
+    <script type="text/javascript">
+        $(function () {
+            alert($("#aGoogle1").attr("href"));
+        });
+    </script>
+
+    <a href="http://www.google.com" id="aGoogle2">Google Link</a><br/><br/>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#aGoogle2").attr("href", "http://www.google.co.uk");
+        });
+    </script>
+
+    <a href="http://www.google.com/" class="google">Google.com</a><br/>
+    <a href="http://www.google.co.uk/" class="google">Google UK</a><br/>
+    <a href="http://www.google.de/" class="google">Google DE</a><br/>
+
+    <script type="text/javascript">
+        $(function () {
+            $("a.google").attr("href", function (index, oldValue) {
+                return oldValue + "imghp?tab=wi";
+            });
+        });
+    </script>
+</body>
+
+</html>

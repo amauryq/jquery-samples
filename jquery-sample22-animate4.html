@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="$('#divTestArea2').slideDown(5000).slideUp(5000);">Show box</a>
+    <a href="javascript:void(0);" onclick="$('#divTestArea2').stop();">Stop</a>
+    <a href="javascript:void(0);" onclick="$('#divTestArea2').stop(true);">Stop all</a>
+    <a href="javascript:void(0);" onclick="$('#divTestArea2').clearQueue().hide();">Reset</a>
+
+    <div id="divTestArea2" style="padding: 100px; background-color: #89BC38; text-align: center; display: none;">
+        <b>Hello, world!</b>
+    </div>
+</body>
+
+</html>

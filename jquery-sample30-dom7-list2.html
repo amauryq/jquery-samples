@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>jQuery test</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <a href="javascript:void(0);" onclick="AppendItemsToList();">Append items</a>
+    <ol id="olTestList2"></ol>
+
+    <script type="text/javascript">
+        function AppendItemsToList() {
+            var item1 = $("<li></li>").text("Item 1");
+            var item2 = "<li>Item 2</li>";
+            var item3 = document.createElement("li");
+            item3.innerHTML = "Item 3";
+
+            $("#olTestList2").append(item1, item2, item3);
+        }
+    </script>
+
+    <a href="javascript:void(0);" onclick="PrependItemsToList();">Prepend items</a>
+    <ol id="olTestList3"></ol>
+
+    <script type="text/javascript">
+                                           function PrependItemsToList() {
+                                               $("#olTestList3").prepend($("<li></li>").text("prepend() item"));
+                                               $("<li></li>").text("prependTo() item").prependTo("#olTestList3");
+                                           }
+
+    </script>
+</body>
+
+</html>
