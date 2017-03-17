@@ -63,7 +63,22 @@
                 alert("First and only message from me!");
             });
         });
+    </script>
 
+    <a href="javascript:void(0);">Test 1</a>
+    <a href="javascript:void(0);">Test 2</a>
+    <script type="text/javascript">
+        var msg = "Hello, world!";
+        $(function () {
+            $("a").bind("click", function () {
+                alert("First event handler!");
+            });
+
+            $("a").bind("click", function () {
+                alert("Second event handler!");
+                $("a").unbind("click");
+            });
+        });
     </script>
 </body>
 
